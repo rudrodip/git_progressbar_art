@@ -3,22 +3,22 @@ from script import create
 
 app = Flask(__name__)
 
-messages = [{'title': 'Message One',
-             'content': 'Message One Content'},
-            {'title': 'Message Two',
-             'content': 'Message Two Content'}
-            ]
-
-
 @app.route('/', methods=['GET', 'POST'])
 def main():
     if request.method == 'POST':
+        # gets the link
         link = request.form['link']
+        
+        # gets the text
         text = request.form['text']
+        
+        # create the content for the page
         content = create.main(link, text)
+        
+        # returns the page
         return gitpage(content)
         
-    return render_template("index.html", messages=messages)
+    return render_template("index.html")
 
 def gitpage(content):
     return render_template("gitpage.html", content=content)

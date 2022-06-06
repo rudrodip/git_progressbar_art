@@ -18,3 +18,24 @@ def coordinates(text):
                 coords.append([i*15, j*16, int(sum(img_data[i][j])/191)])
     
     return coords
+
+
+# How this algorithm works is pretty simple (its not an algorithm though 😅)
+
+#     github progress bar has 7 rows and 52 columns (thus is represents 365 days)
+
+# 1. it takes the text and try to create an image of 7x52 size
+# 2. then for every pixel in the numpy array of the image, it checks for the pixel that has color (it means the r+g+b value must be greater than 0)
+# 3. then it stores those coordinates in the coords array
+
+#     coords array stores coord -> consists of 3 elements
+#         1st element is the column number
+#         2nd element is the row  number
+#         3rd element is the brightless
+#                 github progress data-level has 5 level of brightness - 0, 1, 2, 3, 4
+#                     thus is only takes the non-zero pixel, so the brightness can be represented as (total rgb value / 191)
+#                                 --> this 191 comes from here: 
+#                                             255 + 255 + 255 = 765
+#                                             765 // 4 = 191 [as 4 level of actual brightless, 0 is for zero-progress, so we dont need that as we deal with only the colored pixel]
+                                        
+#     then it returns the coords
