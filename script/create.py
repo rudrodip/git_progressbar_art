@@ -1,4 +1,3 @@
-import os
 from script import get_html, algorithm, replace
     
 def main(link, text):
