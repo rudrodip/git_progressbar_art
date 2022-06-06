@@ -1,6 +1,6 @@
 # Git Progressbar Art
 
-inspired by a meme
+inspired by a meme 😅
 
 Step 1: Enter your github profile link
 
