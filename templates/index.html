@@ -22,21 +22,34 @@
         .container {
             margin-top: 2rem;
             padding: 2rem;
+            overflow: hidden;
         }
-        .credit{
+
+        .credit {
             display: flex;
             flex-direction: row;
             margin-top: 5rem;
         }
-        a{
+
+        a {
             text-decoration: none;
             color: rgb(70, 194, 243);
         }
-        a:hover{
+
+        a:hover {
             color: rgb(10, 233, 185);
         }
-        .warning{
+
+        .warning {
             color: cyan;
+        }
+        .responsive {
+            max-width: 100%;
+            height: auto;
+        }
+        .example{
+            font-size: small;
+            color: gray;
         }
     </style>
 </head>
@@ -44,7 +57,7 @@
 <body>
     <section class="container">
         <h3>
-            Write anything on your GITHUB progress bar
+            Write anything on your GITHUB contribution bar
         </h3>
 
         <form method="post">
@@ -62,7 +75,13 @@
             <p>Repo: </p>
             <a href="https://github.com/rudrodip/git_progressbar_art" target="_blank">git_progressbar_art</a>
         </div>
+
         <p class="warning">*use desktop device</p>
+        <p class="example">Example</p>
+        <div>
+            <img src="{{ url_for('static', filename='example.png') }}" alt="example" class="responsive">
+        </div>
+
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
