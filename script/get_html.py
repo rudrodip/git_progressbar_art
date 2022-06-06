@@ -1,7 +1,10 @@
 import requests
 
 def page_content(link):
-    page = requests.get(link)
+    try:
+        page = requests.get(link)
+    except:
+        return "no url"
     return page.text
 
 
